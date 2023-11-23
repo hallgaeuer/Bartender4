@@ -120,9 +120,10 @@ function BlizzardArtMod:OnEnable()
 		self:RegisterEvent("NEUTRAL_FACTION_SELECT_RESULT", "ApplyConfig")
 	end
 
-	if MainMenuBar_UpdateKeyRing then
-		self:SecureHook("MainMenuBar_UpdateKeyRing", "ApplyConfig")
-	end
+	-- Causes error "Message: [ADDON_ACTION_BLOCKED] AddOn 'Bartender4' tried to call the protected function 'UNKNOWN()'." when using item in combat with blizzard art bar enabled (maybe only on non classic art settings?)
+	--if MainMenuBar_UpdateKeyRing then
+	--	self:SecureHook("MainMenuBar_UpdateKeyRing", "ApplyConfig")
+	--end
 end
 
 function BlizzardArtMod:ApplyConfig()
